@@ -1,2 +1,15 @@
 <h1>Lists#new</h1>
 <p>Find me in app/views/lists/new.html.erb</p>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |msg| %>
+        <ul>
+            <li> <%= msg %></li>
+        </ul>
+    <% end %>
+<% end %>
+
+<%= form_with model: @list do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+<% end %>

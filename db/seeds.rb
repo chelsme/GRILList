@@ -15,9 +15,9 @@ chels = User.create(name: "Chelsea", username: "chelsme", password: "cutedog")
 kim = User.create(name: "Kim", username: "kimme", password: "cutepuppy")
 trung = User.create(name: "Trung", username: "trungme", password: "cutecat")
 
-steak = Recipe.create(name: "Steak")
-burger = Recipe.create(name: "Burger")
-smore = Recipe.create(name: "S'more")
+steak = Recipe.create(name: "Steak", user: chels)
+burger = Recipe.create(name: "Burger", user: kim)
+smore = Recipe.create(name: "S'more", user: trung)
 
 ribeye = Item.create(name: "ribeye")
 butter = Item.create(name: "butter")

@@ -3014,3 +3014,138 @@ FOREIGN KEY ("item_id")
   [1m[36mUserList Load (0.2ms)[0m  [1m[34mSELECT  "user_lists".* FROM "user_lists" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mRecipeItem Load (0.2ms)[0m  [1m[34mSELECT  "recipe_items".* FROM "recipe_items" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/lists" for 127.0.0.1 at 2018-10-01 14:59:06 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/chelseacrowson/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:5
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "list_items" ON "items"."id" = "list_items"."item_id" WHERE "list_items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "list_items" ON "items"."id" = "list_items"."item_id" WHERE "list_items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/index.html.erb:8
+  Rendered lists/index.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 296ms (Views: 280.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/lists/1" for 127.0.0.1 at 2018-10-01 14:59:23 -0500
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:30
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 27.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/2" for 127.0.0.1 at 2018-10-01 14:59:26 -0500
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:30
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2018-10-01 15:00:54 -0500
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:5
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "list_items" ON "items"."id" = "list_items"."item_id" WHERE "list_items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/views/lists/index.html.erb:8
+  Rendered lists/index.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `item_quantity' for #<Item:0x007fa29caf2080>):
+     6:     <p><%= link_to list.name, list_path(list) %></p>
+     7:     <ul>
+     8:         <% list.items.each do |item| %>
+     9:             <li><%= item.item_quantity %> <%= item.name %></li>
+    10:         <% end %>
+    11:     </ul>
+    12: <% end %>
+  
+app/views/lists/index.html.erb:9:in `block (2 levels) in _app_views_lists_index_html_erb__762682305552299738_70168202124600'
+app/views/lists/index.html.erb:8:in `block in _app_views_lists_index_html_erb__762682305552299738_70168202124600'
+app/views/lists/index.html.erb:5:in `_app_views_lists_index_html_erb__762682305552299738_70168202124600'
+Started GET "/lists" for 127.0.0.1 at 2018-10-01 15:02:08 -0500
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:5
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "list_items" ON "items"."id" = "list_items"."item_id" WHERE "list_items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/views/lists/index.html.erb:8
+  Rendered lists/index.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `list_item' for #<Item:0x007fa2978cbe78>):
+     6:     <p><%= link_to list.name, list_path(list) %></p>
+     7:     <ul>
+     8:         <% list.items.each do |item| %>
+     9:             <li><%= item.list_item.item_quantity %> <%= item.name %></li>
+    10:         <% end %>
+    11:     </ul>
+    12: <% end %>
+  
+app/views/lists/index.html.erb:9:in `block (2 levels) in _app_views_lists_index_html_erb__762682305552299738_70168193976200'
+app/views/lists/index.html.erb:8:in `block in _app_views_lists_index_html_erb__762682305552299738_70168193976200'
+app/views/lists/index.html.erb:5:in `_app_views_lists_index_html_erb__762682305552299738_70168193976200'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" ORDER BY "items"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddUserToRecipes (20181001201002)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "recipes" ADD "user_id" integer[0m
+  ↳ db/migrate/20181001201002_add_user_to_recipes.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181001201002_add_user_to_recipes.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")[0m
+  ↳ db/migrate/20181001201002_add_user_to_recipes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001201002"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Update (0.4ms)[0m  [1m[33mUPDATE "recipes" SET "user_id" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["user_id", 1], ["updated_at", "2018-10-01 20:13:04.460842"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Update (0.3ms)[0m  [1m[33mUPDATE "recipes" SET "user_id" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["user_id", 2], ["updated_at", "2018-10-01 20:13:44.702347"], ["id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Update (0.3ms)[0m  [1m[33mUPDATE "recipes" SET "user_id" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["user_id", 3], ["updated_at", "2018-10-01 20:13:55.869482"], ["id", 3]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Update (0.4ms)[0m  [1m[33mUPDATE "recipes" SET "user_id" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["user_id", 2], ["updated_at", "2018-10-01 20:15:40.710330"], ["id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Update (0.3ms)[0m  [1m[33mUPDATE "recipes" SET "user_id" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["user_id", 3], ["updated_at", "2018-10-01 20:16:05.172427"], ["id", 2]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
