@@ -1,6 +1,6 @@
-class CreateListUsers < ActiveRecord::Migration[5.2]
+class CreateUserLists < ActiveRecord::Migration[5.2]
   def change
-    create_table :list_users do |t|
+    create_table :user_lists do |t|
       t.belongs_to :list, foreign_key: true
       t.belongs_to :user, foreign_key: true
 

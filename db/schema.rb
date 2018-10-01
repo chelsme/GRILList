@@ -28,15 +28,6 @@ ActiveRecord::Schema.define(version: 2018_10_01_175255) do
     t.index ["list_id"], name: "index_list_items_on_list_id"
   end
 
-  create_table "list_users", force: :cascade do |t|
-    t.integer "list_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["list_id"], name: "index_list_users_on_list_id"
-    t.index ["user_id"], name: "index_list_users_on_user_id"
-  end
-
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -59,9 +50,18 @@ ActiveRecord::Schema.define(version: 2018_10_01_175255) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_lists", force: :cascade do |t|
+    t.integer "list_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_user_lists_on_list_id"
+    t.index ["user_id"], name: "index_user_lists_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
+    t.string "username"
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

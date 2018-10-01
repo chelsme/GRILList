@@ -1,2 +1,0 @@
-class ListUsersController < ApplicationController
-end
