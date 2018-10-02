@@ -32,7 +32,6 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
     RecipeItem.where(recipe_id: params[:id]).destroy_all
     @recipe.update(recipe_params)
     redirect_to @recipe
