@@ -1,11 +1,9 @@
-<h1>Lists#index</h1>
+<h1>Lists</h1>
 <h3><%= link_to 'Create New List', new_list_path %></h3>
 <img src="https://media.giphy.com/media/B7o99rIuystY4/giphy.gif">
 
 <% @lists.each do |list| %>
-
     <p><%= link_to list.name, list_path(list) %></p>
-
 <% end %>
 
 

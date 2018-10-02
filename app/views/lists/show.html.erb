@@ -1,13 +1,14 @@
 <h1><%= @list.name %></h1>
     <ul>
         <% @list.list_items.each do |list_item| %>
-            <li><%= list_item.item_quantity %> <%= list_item.item.name %>  </li>
+            <li><%= list_item.item_quantity %> <%= list_item.item.name %></li>
         <% end %>
     </ul>
-     <%= form_tag edit_list_path, method: 'patch' do %>
+
+    <%= form_tag edit_list_path, method: 'get' do %>
         <%= submit_tag "Edit list" %>
     <% end %>
-    <%= form_tag list_path(@list.id), method: 'delete' do %>
+
+    <%= form_tag list_path, method: 'delete' do %>
         <%= submit_tag "Delete list" %>
     <% end %>
-

@@ -1,2 +1,15 @@
-<h1>Lists#edit</h1>
-<p>Find me in app/views/lists/edit.html.erb</p>
+<% if flash[:errors] %>
+    <ul>
+    <% flash[:errors].each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_with model: @list do |f| %>
+    <h2>List name: <%= f.text_field :name %></h2>
+    <h2>Items: </h2><%= f.fields_for :items do |item| %>
+        <p><%= item.text_field :name %></p>
+    <% end %>
+    <%= f.submit %>
+<% end %>
