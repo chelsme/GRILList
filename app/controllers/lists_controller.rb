@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update]
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
+
   def index
     @lists = List.all
   end
@@ -28,6 +29,14 @@ class ListsController < ApplicationController
   end
 
   def update
+  end
+
+  def destroy
+    @list.list_items.each do |list_item|
+      list_item.destroy
+    end
+    @list.destroy
+    redirect_to lists_path
   end
 
   private

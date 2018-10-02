@@ -4,3 +4,6 @@
             <li><%= list_item.item_quantity %> <%= list_item.item.name %></li>
         <% end %>
     </ul>
+    <%= form_tag list_path(@list.id), method: 'delete' do %>
+        <%= submit_tag "Delete list" %>
+    <% end %>

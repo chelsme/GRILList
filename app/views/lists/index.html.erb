@@ -1,12 +1,11 @@
 <h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<h3><%= link_to 'Create New List', new_list_path %></h3>
 <img src="https://media.giphy.com/media/B7o99rIuystY4/giphy.gif">
 
 <% @lists.each do |list| %>
+
     <p><%= link_to list.name, list_path(list) %></p>
-    <ul>
-        <% list.list_items.each do |list_item| %>
-            <li><%= list_item.item_quantity %> <%= list_item.item.name %></li>
-        <% end %>
-    </ul>
+
 <% end %>
+
+
