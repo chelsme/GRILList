@@ -4,6 +4,11 @@
   <h1><%= @user.name%></h1>
 
   Here is my username:'<%= @user.username %>'
+  Here are your lists: 
+  <% @user.lists.each do |list| %>
+    <p><%= link_to list.name, list %></p>
+  <% end %>
+
 
   <%= button_to "I wanna loggity log out", '/sessions', method: :delete %>
 <% else %>
