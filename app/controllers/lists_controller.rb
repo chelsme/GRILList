@@ -7,9 +7,14 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
-    @list.items.build
-    @list.items.build
-    @list.items.build
+    @list.items.new
+    @list.items.new
+    @list.items.new
+    @list.items.new
+    @list.items.new
+    @list.items.new
+    @list.items.new
+    @list.items.new
   end
 
   def create
@@ -26,6 +31,7 @@ class ListsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
@@ -42,7 +48,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, item_ids:[], items_attributes: [:name])
+    params.require(:list).permit(:name, item_ids:[], items_attributes: [:name], list_items_attributes: [:item_quantity] )
   end
 
   def set_list
