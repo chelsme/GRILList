@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :lists
   resources :users
  
-  get 'patch', to: "list#edit"
+  get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
 end
