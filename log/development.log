@@ -4558,3 +4558,639 @@ SystemExit (exit):
 (byebug):1:in `items_attributes='
 app/models/list.rb:9:in `items_attributes='
 app/controllers/lists_controller.rb:15:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-02 06:00:38 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sparkbold/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sparkbold/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sparkbold/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 23ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2018-10-02 06:00:43 -0500
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:5
+  [1m[36mListItem Load (0.3ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mListItem Load (0.1ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mListItem Load (0.1ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 3]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mListItem Load (0.1ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 4]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mListItem Load (0.1ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 5]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 6]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mListItem Load (0.1ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 7]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mListItem Load (0.1ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 8]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mListItem Load (0.1ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 9]]
+  ↳ app/views/lists/index.html.erb:8
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/lists/index.html.erb:9
+  Rendered lists/index.html.erb within layouts/application (107.6ms)
+Completed 200 OK in 334ms (Views: 315.4ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/lists/new" for 127.0.0.1 at 2018-10-02 06:00:48 -0500
+Processing by ListsController#new as HTML
+  Rendering lists/new.html.erb within layouts/application
+  Rendered lists/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 59ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/lists" for 127.0.0.1 at 2018-10-02 06:00:57 -0500
+Processing by ListsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wUCKMQFKR3L8u5dyNs7ucT7i3iYi+sdk8BS7TCpOUAP9KlARBAcz1b+bo7eUNDY7250gR81dfv3hnMXZb0VoyA==", "list"=>{"name"=>"Grilling", "items_attributes"=>{"0"=>{"name"=>"butter"}, "1"=>{"name"=>"chicken"}, "2"=>{"name"=>"salt"}}}, "commit"=>"Create List"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `value' for #<ActiveSupport::HashWithIndifferentAccess:0x007f800752a380>
+Did you mean?  value?
+               values):
+  
+app/models/list.rb:10:in `items_attributes='
+app/controllers/lists_controller.rb:15:in `create'
+Started GET "/lists/new" for 127.0.0.1 at 2018-10-02 06:01:55 -0500
+Processing by ListsController#new as HTML
+  Rendering lists/new.html.erb within layouts/application
+  Rendered lists/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 82ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/lists" for 127.0.0.1 at 2018-10-02 06:02:02 -0500
+Processing by ListsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Av3CZWHroIaEmTv9RdXtSr0Tlcstz5RMNduTmlQ3WKA+lxhFZKbUIce5DzjnLzUAWGxrqsJoLdUkU+0PETxgaw==", "list"=>{"name"=>"Grilling", "items_attributes"=>{"0"=>{"name"=>"butter"}, "1"=>{"name"=>"chicken"}, "2"=>{"name"=>"herb mix"}}}, "commit"=>"Create List"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "butter"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "chicken"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "herb mix"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mList Create (0.5ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Grilling"], ["created_at", "2018-10-02 11:02:12.186753"], ["updated_at", "2018-10-02 11:02:12.186753"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.2ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 10], ["item_id", 2], ["created_at", "2018-10-02 11:02:12.188713"], ["updated_at", "2018-10-02 11:02:12.188713"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.1ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 10], ["item_id", 16], ["created_at", "2018-10-02 11:02:12.190303"], ["updated_at", "2018-10-02 11:02:12.190303"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.1ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 10], ["item_id", 3], ["created_at", "2018-10-02 11:02:12.191698"], ["updated_at", "2018-10-02 11:02:12.191698"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:16
+Redirected to http://localhost:3000/lists/10
+Completed 200 OK in 56ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/lists/10" for 127.0.0.1 at 2018-10-02 06:02:12 -0500
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:40
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 10]]
+  ↳ app/views/lists/show.html.erb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  Rendered lists/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 78ms (Views: 63.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mListItem Load (0.8ms)[0m  [1m[34mSELECT  "list_items".* FROM "list_items" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE (chicken) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "chicken"], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181001174836)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001174836_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001174836"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateLists (20181001174943)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "lists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001174943_create_lists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001174943"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20181001174955)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001174955_create_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001174955"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateRecipes (20181001175016)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001175016_create_recipes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001175016"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUserLists (20181001175102)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "user_lists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "list_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_71a493bef7"
+FOREIGN KEY ("list_id")
+  REFERENCES "lists" ("id")
+, CONSTRAINT "fk_rails_7b6eb4d716"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20181001175102_create_user_lists.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_user_lists_on_list_id" ON "user_lists" ("list_id")[0m
+  ↳ db/migrate/20181001175102_create_user_lists.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_user_lists_on_user_id" ON "user_lists" ("user_id")[0m
+  ↳ db/migrate/20181001175102_create_user_lists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001175102"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateListItems (20181001175234)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "list_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "list_id" integer, "item_id" integer, "item_quantity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_12b8df7bb8"
+FOREIGN KEY ("list_id")
+  REFERENCES "lists" ("id")
+, CONSTRAINT "fk_rails_6912172214"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+)[0m
+  ↳ db/migrate/20181001175234_create_list_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_list_items_on_list_id" ON "list_items" ("list_id")[0m
+  ↳ db/migrate/20181001175234_create_list_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_list_items_on_item_id" ON "list_items" ("item_id")[0m
+  ↳ db/migrate/20181001175234_create_list_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001175234"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateRecipeItems (20181001175255)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "recipe_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "recipe_id" integer, "item_id" integer, "item_quantity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_42c6cf9a77"
+FOREIGN KEY ("recipe_id")
+  REFERENCES "recipes" ("id")
+, CONSTRAINT "fk_rails_cab1744bad"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+)[0m
+  ↳ db/migrate/20181001175255_create_recipe_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_recipe_items_on_recipe_id" ON "recipe_items" ("recipe_id")[0m
+  ↳ db/migrate/20181001175255_create_recipe_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_recipe_items_on_item_id" ON "recipe_items" ("item_id")[0m
+  ↳ db/migrate/20181001175255_create_recipe_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001175255"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddUserToRecipes (20181001201002)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "user_id" integer[0m
+  ↳ db/migrate/20181001201002_add_user_to_recipes.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")[0m
+  ↳ db/migrate/20181001201002_add_user_to_recipes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001201002"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-02 11:05:19.102703"], ["updated_at", "2018-10-02 11:05:19.102703"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUserList Load (0.1ms)[0m  [1m[34mSELECT "user_lists".* FROM "user_lists"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chelsea"], ["username", "chelsme"], ["password", "cutedog"], ["created_at", "2018-10-02 11:05:36.767448"], ["updated_at", "2018-10-02 11:05:36.767448"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kim"], ["username", "kimme"], ["password", "cutepuppy"], ["created_at", "2018-10-02 11:05:36.770767"], ["updated_at", "2018-10-02 11:05:36.770767"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Trung"], ["username", "trungme"], ["password", "cutecat"], ["created_at", "2018-10-02 11:05:36.773235"], ["updated_at", "2018-10-02 11:05:36.773235"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mRecipe Create (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Steak"], ["created_at", "2018-10-02 11:05:36.783675"], ["updated_at", "2018-10-02 11:05:36.783675"], ["user_id", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mRecipe Create (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Burger"], ["created_at", "2018-10-02 11:05:36.786576"], ["updated_at", "2018-10-02 11:05:36.786576"], ["user_id", 2]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "S'more"], ["created_at", "2018-10-02 11:05:36.788891"], ["updated_at", "2018-10-02 11:05:36.788891"], ["user_id", 3]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ribeye"], ["created_at", "2018-10-02 11:05:36.794486"], ["updated_at", "2018-10-02 11:05:36.794486"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "butter"], ["created_at", "2018-10-02 11:05:36.796832"], ["updated_at", "2018-10-02 11:05:36.796832"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "herb mix"], ["created_at", "2018-10-02 11:05:36.798928"], ["updated_at", "2018-10-02 11:05:36.798928"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tomato"], ["created_at", "2018-10-02 11:05:36.801170"], ["updated_at", "2018-10-02 11:05:36.801170"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lettuce"], ["created_at", "2018-10-02 11:05:36.803323"], ["updated_at", "2018-10-02 11:05:36.803323"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bun"], ["created_at", "2018-10-02 11:05:36.805500"], ["updated_at", "2018-10-02 11:05:36.805500"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "cheese"], ["created_at", "2018-10-02 11:05:36.807827"], ["updated_at", "2018-10-02 11:05:36.807827"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "hamburger patty"], ["created_at", "2018-10-02 11:05:36.810037"], ["updated_at", "2018-10-02 11:05:36.810037"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "graham cracker"], ["created_at", "2018-10-02 11:05:36.812371"], ["updated_at", "2018-10-02 11:05:36.812371"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "chocolate"], ["created_at", "2018-10-02 11:05:36.814586"], ["updated_at", "2018-10-02 11:05:36.814586"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "marshmallow"], ["created_at", "2018-10-02 11:05:36.816995"], ["updated_at", "2018-10-02 11:05:36.816995"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mList Create (0.3ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Grilling List"], ["created_at", "2018-10-02 11:05:36.824315"], ["updated_at", "2018-10-02 11:05:36.824315"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mList Create (0.3ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Grocery List"], ["created_at", "2018-10-02 11:05:36.827206"], ["updated_at", "2018-10-02 11:05:36.827206"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUserList Create (0.5ms)[0m  [1m[32mINSERT INTO "user_lists" ("list_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 1], ["user_id", 1], ["created_at", "2018-10-02 11:05:36.840647"], ["updated_at", "2018-10-02 11:05:36.840647"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mRecipeItem Create (0.5ms)[0m  [1m[32mINSERT INTO "recipe_items" ("recipe_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recipe_id", 2], ["item_id", 6], ["item_quantity", 2], ["created_at", "2018-10-02 11:05:36.854052"], ["updated_at", "2018-10-02 11:05:36.854052"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mRecipeItem Create (0.4ms)[0m  [1m[32mINSERT INTO "recipe_items" ("recipe_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recipe_id", 2], ["item_id", 4], ["item_quantity", 1], ["created_at", "2018-10-02 11:05:36.856784"], ["updated_at", "2018-10-02 11:05:36.856784"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mRecipeItem Create (0.4ms)[0m  [1m[32mINSERT INTO "recipe_items" ("recipe_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recipe_id", 2], ["item_id", 7], ["item_quantity", 2], ["created_at", "2018-10-02 11:05:36.859621"], ["updated_at", "2018-10-02 11:05:36.859621"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mRecipeItem Create (0.5ms)[0m  [1m[32mINSERT INTO "recipe_items" ("recipe_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recipe_id", 2], ["item_id", 8], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.862860"], ["updated_at", "2018-10-02 11:05:36.862860"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[36mRecipeItem Create (0.4ms)[0m  [1m[32mINSERT INTO "recipe_items" ("recipe_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recipe_id", 2], ["item_id", 5], ["item_quantity", 1], ["created_at", "2018-10-02 11:05:36.866329"], ["updated_at", "2018-10-02 11:05:36.866329"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mListItem Create (0.5ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 1], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.882194"], ["updated_at", "2018-10-02 11:05:36.882194"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mListItem Create (0.4ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 2], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.885219"], ["updated_at", "2018-10-02 11:05:36.885219"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mListItem Create (0.3ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 3], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.887854"], ["updated_at", "2018-10-02 11:05:36.887854"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mListItem Create (0.3ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 4], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.890217"], ["updated_at", "2018-10-02 11:05:36.890217"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[36mListItem Create (0.3ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 5], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.892562"], ["updated_at", "2018-10-02 11:05:36.892562"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mListItem Create (0.4ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 6], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.895132"], ["updated_at", "2018-10-02 11:05:36.895132"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mListItem Create (0.4ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 7], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.897550"], ["updated_at", "2018-10-02 11:05:36.897550"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[36mListItem Create (0.4ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 8], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.900220"], ["updated_at", "2018-10-02 11:05:36.900220"]]
+  ↳ db/seeds.rb:52
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mListItem Create (0.4ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 9], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.902702"], ["updated_at", "2018-10-02 11:05:36.902702"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:54
+  [1m[36mListItem Create (0.4ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 10], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.905477"], ["updated_at", "2018-10-02 11:05:36.905477"]]
+  ↳ db/seeds.rb:54
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:55
+  [1m[36mListItem Create (0.4ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "item_quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["list_id", 1], ["item_id", 11], ["item_quantity", 3], ["created_at", "2018-10-02 11:05:36.908201"], ["updated_at", "2018-10-02 11:05:36.908201"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:55
+Started GET "/lists/1" for 127.0.0.1 at 2018-10-02 06:05:58 -0500
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:40
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/views/lists/show.html.erb:3
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  Rendered lists/show.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 84ms (Views: 67.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/lists/2" for 127.0.0.1 at 2018-10-02 06:06:03 -0500
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:40
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mListItem Load (0.1ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:3
+  Rendered lists/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/new" for 127.0.0.1 at 2018-10-02 06:07:46 -0500
+Processing by ListsController#new as HTML
+  Rendering lists/new.html.erb within layouts/application
+  Rendered lists/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 46ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/lists" for 127.0.0.1 at 2018-10-02 06:08:17 -0500
+Processing by ListsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"22caWHeCGfuD7iRz8qlShtpfWGjCnzxzuL8ugGNOwx3nDcB4cs9tXMDOELZQU4rMPyCmCS04heqpN1AVJkX71g==", "list"=>{"name"=>"Taco party", "items_attributes"=>{"0"=>{"name"=>"fish"}, "1"=>{"name"=>"taco"}, "2"=>{"name"=>"herb mix"}}}, "commit"=>"Create List"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "fish"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/list.rb:11
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fish"], ["created_at", "2018-10-02 11:08:17.551380"], ["updated_at", "2018-10-02 11:08:17.551380"]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/list.rb:11
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "taco"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/list.rb:11
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "taco"], ["created_at", "2018-10-02 11:08:17.558966"], ["updated_at", "2018-10-02 11:08:17.558966"]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/list.rb:11
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "herb mix"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mList Create (0.3ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Taco party"], ["created_at", "2018-10-02 11:08:17.564382"], ["updated_at", "2018-10-02 11:08:17.564382"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.2ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 3], ["item_id", 12], ["created_at", "2018-10-02 11:08:17.565639"], ["updated_at", "2018-10-02 11:08:17.565639"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.1ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 3], ["item_id", 13], ["created_at", "2018-10-02 11:08:17.566642"], ["updated_at", "2018-10-02 11:08:17.566642"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.1ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 3], ["item_id", 3], ["created_at", "2018-10-02 11:08:17.567480"], ["updated_at", "2018-10-02 11:08:17.567480"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:16
+Redirected to http://localhost:3000/lists/3
+Completed 200 OK in 22ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/lists/3" for 127.0.0.1 at 2018-10-02 06:08:17 -0500
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:40
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 3]]
+  ↳ app/views/lists/show.html.erb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  Rendered lists/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 58ms (Views: 50.6ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
