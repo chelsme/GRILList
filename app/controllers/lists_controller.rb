@@ -16,6 +16,7 @@ class ListsController < ApplicationController
   def create
     @list  = List.new(list_params)
     if @list.save
+      UserList.create(user_id: session[:user_id],list_id: @list.id)
       redirect_to @list
     else
       flash[:errors] = @list.errors.full_messages

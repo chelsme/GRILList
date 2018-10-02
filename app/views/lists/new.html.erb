@@ -8,6 +8,7 @@
 
 <%= form_with model: @list do |f| %>
     <h2>List name: <%= f.text_field :name %></h2>
+
     <h2>Items: </h2><%= f.fields_for :items do |item| %>
         <p><%= item.text_field :name, placeholder: 'Item Name' %></p>
     <% end %>

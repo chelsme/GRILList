@@ -3,9 +3,14 @@
 <% if @current_user %>
   <h1><%= @user.name%></h1>
 
-  Here is my username:'<%= @user.username %>'
+  Username is'<%= @user.username %>
 
-  <%= button_to "I wanna loggity log out", '/sessions', method: :delete %>
+  <% @user.lists.each do |list| %>
+    <p><%= link_to list.name, list_path(list) %></p>
+    <% end %>
+
+  <%= button_to "Create List", new_list_path, method: :get %>
+  <%= button_to "Logout", '/sessions', method: :delete %>
 <% else %>
   YO. You aren't allowed to see <%= @user.username %>'s secret, brah!!!
 <% end %>
