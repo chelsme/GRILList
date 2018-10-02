@@ -9,7 +9,12 @@
     <p><%= link_to list.name, list_path(list) %></p>
     <% end %>
 
+    <% @user.recipes.each do |recipe| %>
+    <p><%= link_to recipe.name, recipe_path(recipe) %></p>
+    <% end %>  
+
   <%= button_to "Create List", new_list_path, method: :get %>
+  <%= button_to "Create Recipe", new_recipe_path, method: :get %>
   <%= button_to "Logout", '/sessions', method: :delete %>
 <% else %>
   YO. You aren't allowed to see <%= @user.username %>'s secret, brah!!!
