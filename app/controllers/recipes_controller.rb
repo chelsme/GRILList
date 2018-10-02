@@ -33,11 +33,9 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    if @recipe.save
-      redirect_to @recipe
-    else
-      redirect_to edit_recipe_path
-    end
+    RecipeItem.where(recipe_id: params[:id]).destroy_all
+    @recipe.update(recipe_params)
+    redirect_to @recipe
   end
 
   def destroy
