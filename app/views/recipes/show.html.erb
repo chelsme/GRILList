@@ -1,2 +1,12 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<h1><%= @recipe.name %></h1>
+    <ul>
+        <% @recipe.recipe_items.each do |recipe_item| %>
+            <li><%= recipe_item.item_quantity %> <%= recipe_item.item.name %>  </li>
+        <% end %>
+    </ul>
+     <%= form_tag edit_recipe_path, method: 'get' do %>
+        <%= submit_tag "Edit recipe" %>
+    <% end %>
+    <%= form_tag recipe_path(@recipe.id), method: 'delete' do %>
+        <%= submit_tag "Delete recipe" %>
+    <% end %>

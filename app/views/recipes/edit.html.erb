@@ -1,2 +1,18 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |msg| %>
+        <ul>
+            <li> <%= msg %></li>
+        </ul>
+    <% end %>
+<% end %>
+
+<%= form_with model: @recipe do |f| %>
+    <h2>Recipe name: <%= f.text_field :name %></h2>
+    <h2>Recipe by: <%= f.collection_select :user_id, User.all, :id, :name %></h2>
+
+    <h2>Items: </h2><%= f.fields_for :items do |item| %>
+        <p><%#= @recipe.quantity %> <%= item.text_field :name, placeholder: 'Add new item' %></p>
+    <% end %>
+
+    <%= f.submit %>
+<% end %>
