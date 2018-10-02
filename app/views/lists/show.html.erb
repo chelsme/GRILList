@@ -1,2 +1,6 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<h1><%= @list.name %></h1>
+    <ul>
+        <% @list.list_items.each do |list_item| %>
+            <li><%= list_item.item_quantity %> <%= list_item.item.name %></li>
+        <% end %>
+    </ul>

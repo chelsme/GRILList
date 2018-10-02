@@ -6,6 +6,9 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @list.items.build
+    @list.items.build
+    @list.items.build
   end
 
   def create
@@ -15,6 +18,7 @@ class ListsController < ApplicationController
     else
       flash[:errors] = @list.errors.full_messages
       redirect_to new_list_path
+    end
   end
 
   def show
@@ -29,7 +33,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, item_ids:[], items_attributes: [:name])
   end
 
   def set_list

@@ -5,8 +5,8 @@
 <% @lists.each do |list| %>
     <p><%= link_to list.name, list_path(list) %></p>
     <ul>
-        <% list.items.each do |item| %>
-            <li><%= item.list_item.item_quantity %> <%= item.name %></li>
+        <% list.list_items.each do |list_item| %>
+            <li><%= list_item.item_quantity %> <%= list_item.item.name %></li>
         <% end %>
     </ul>
 <% end %>
