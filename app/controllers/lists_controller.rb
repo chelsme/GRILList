@@ -36,6 +36,9 @@ class ListsController < ApplicationController
     @list.list_items.each do |list_item|
       list_item.destroy
     end
+    @list.user_lists.each do |user_list|
+      user_list.destroy
+    end
     @list.destroy
     redirect_to lists_path
   end
