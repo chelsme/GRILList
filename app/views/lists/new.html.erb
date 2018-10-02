@@ -10,6 +10,9 @@
 <% end %>
 
 <%= form_with model: @list do |f| %>
-    <%= f.text_field :name %>
+    List name: <%= f.text_field :name %>
+    Items: <%= f.fields_for :items do |item| %>
+        <%= item.text_field :name %>
+    <% end %>
     <%= f.submit %>
 <% end %>
