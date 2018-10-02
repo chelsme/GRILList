@@ -1,12 +1,20 @@
-<h1><%= @recipe.name %></h1>
+<h1><%= @recipe.name.titlecase %></h1>
+    <h3>Ingredients: </h3>
     <ul>
         <% @recipe.recipe_items.each do |recipe_item| %>
             <li><%= recipe_item.item_quantity %> <%= recipe_item.item.name %>  </li>
         <% end %>
     </ul>
-     <%= form_tag edit_recipe_path, method: 'get' do %>
+    <h3>Instructions: </h3>
+    <%= @recipe.instructions %>
+    <br><br>
+
+    <%= form_tag edit_recipe_path, method: 'get' do %>
         <%= submit_tag "Edit recipe" %>
     <% end %>
+    <br>
     <%= form_tag recipe_path(@recipe.id), method: 'delete' do %>
         <%= submit_tag "Delete recipe" %>
     <% end %>
+    <br>
+    <%= link_to 'Back to all recipes', recipes_path %>
