@@ -27,9 +27,21 @@ class ListsController < ApplicationController
   end
 
   def edit
+    4.times do
+      @list.items.new
+    end
   end
 
   def update
+    list_params[:items_attributes].values.each do |item_attribute|
+      if item_attribute[:name] != ""
+        item = Item.find_or_create_by(name: item_attribute[:name])
+        if !@list.items.include?(item)
+            ListItem.create(list_id: @list.id, item_id: item.id)
+        end
+      end
+    end
+    redirect_to list_path
   end
 
   def destroy
