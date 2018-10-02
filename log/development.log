@@ -5194,3 +5194,122 @@ Completed 200 OK in 58ms (Views: 50.6ms | ActiveRecord: 0.7ms)
   [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
   [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+Started GET "/lists/new" for 127.0.0.1 at 2018-10-02 08:15:58 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sparkbold/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ListsController#new as HTML
+  Rendering lists/new.html.erb within layouts/application
+  Rendered lists/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 257ms (Views: 211.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/lists" for 127.0.0.1 at 2018-10-02 08:16:24 -0500
+Processing by ListsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OxOnySI9uYzNHbdxtYYxQvgQ4fralZ+bhe/rw/lRdO8HeX3pJ3DNK449g7QXfOkIHW8fmzUyJgKUZ5VWvFpMJA==", "list"=>{"name"=>"Fish Fry", "items_attributes"=>{"0"=>{"name"=>"fish"}, "1"=>{"name"=>"breadcrumb"}, "2"=>{"name"=>"salt"}}}, "commit"=>"Create List"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "fish"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "breadcrumb"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/list.rb:11
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "breadcrumb"], ["created_at", "2018-10-02 13:16:24.025394"], ["updated_at", "2018-10-02 13:16:24.025394"]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/list.rb:11
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "salt"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/list.rb:11
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "salt"], ["created_at", "2018-10-02 13:16:24.030379"], ["updated_at", "2018-10-02 13:16:24.030379"]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/list.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fish Fry"], ["created_at", "2018-10-02 13:16:24.034423"], ["updated_at", "2018-10-02 13:16:24.034423"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.2ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 4], ["item_id", 12], ["created_at", "2018-10-02 13:16:24.035861"], ["updated_at", "2018-10-02 13:16:24.035861"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.1ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 4], ["item_id", 14], ["created_at", "2018-10-02 13:16:24.037042"], ["updated_at", "2018-10-02 13:16:24.037042"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.1ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 4], ["item_id", 15], ["created_at", "2018-10-02 13:16:24.038546"], ["updated_at", "2018-10-02 13:16:24.038546"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:16
+Redirected to http://localhost:3000/lists/4
+Completed 200 OK in 33ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/lists/4" for 127.0.0.1 at 2018-10-02 08:16:24 -0500
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:40
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mListItem Load (0.2ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 4]]
+  ↳ app/views/lists/show.html.erb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  Rendered lists/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 55ms (Views: 46.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/lists/new" for 127.0.0.1 at 2018-10-02 08:17:27 -0500
+Processing by ListsController#new as HTML
+  Rendering lists/new.html.erb within layouts/application
+  Rendered lists/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 63ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" INNER JOIN "list_items" ON "items"."id" = "list_items"."item_id" WHERE "list_items"."list_id" = ?[0m  [["list_id", 3]]
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Started POST "/lists" for 127.0.0.1 at 2018-10-02 08:21:32 -0500
+Processing by ListsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yNKeh4yEtsvdcKXur9Dmo+ipSgAo/1zXV1J3JFR9r4z0uESnicnCbJ5QkSsNKj7pDda0YcdY5U5G2gmxEXaXRw==", "list"=>{"name"=>"Fish Fry 2", "items_attributes"=>{"0"=>{"name"=>"fish"}, "1"=>{"name"=>"breadcrumb"}, "2"=>{"name"=>"butter"}}}, "commit"=>"Create List"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "fish"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "breadcrumb"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = ? LIMIT ?[0m  [["name", "butter"], ["LIMIT", 1]]
+  ↳ app/models/list.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mList Create (0.5ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fish Fry 2"], ["created_at", "2018-10-02 13:21:32.121321"], ["updated_at", "2018-10-02 13:21:32.121321"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.2ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 5], ["item_id", 12], ["created_at", "2018-10-02 13:21:32.123346"], ["updated_at", "2018-10-02 13:21:32.123346"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.1ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 5], ["item_id", 14], ["created_at", "2018-10-02 13:21:32.124526"], ["updated_at", "2018-10-02 13:21:32.124526"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[36mListItem Create (0.1ms)[0m  [1m[32mINSERT INTO "list_items" ("list_id", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["list_id", 5], ["item_id", 2], ["created_at", "2018-10-02 13:21:32.125681"], ["updated_at", "2018-10-02 13:21:32.125681"]]
+  ↳ app/controllers/lists_controller.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lists_controller.rb:16
+Redirected to http://localhost:3000/lists/5
+Completed 200 OK in 16ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/lists/5" for 127.0.0.1 at 2018-10-02 08:21:32 -0500
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:40
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mListItem Load (0.3ms)[0m  [1m[34mSELECT "list_items".* FROM "list_items" WHERE "list_items"."list_id" = ?[0m  [["list_id", 5]]
+  ↳ app/views/lists/show.html.erb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lists/show.html.erb:4
+  Rendered lists/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 73ms (Views: 64.4ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
