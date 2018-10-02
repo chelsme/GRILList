@@ -13,6 +13,7 @@
     <h2>Items: </h2><%= f.fields_for :items do |item| %>
         <p><%#= @recipe.quantity %> <%= item.text_field :name, placeholder: 'Add new item' %></p>
     <% end %>
+    <h2>Instructions: <%= f.text_area :instructions %></h2>
 
     <%= f.submit %>
 <% end %>
