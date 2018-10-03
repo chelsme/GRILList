@@ -1,9 +1,15 @@
 require 'test_helper'
 
 class RecipeTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should not save recipe with invalid attributes" do
+    recipe = Recipe.new
+    assert_not recipe.save, "Saved the recipe without attributes"
+  end
+
+  test "should be able to edit recipe" do
+    Recipe.first.update(name: "banana pudding")
+    assert true
+  end
 
   # test "creating a recipe" do
   #   visit recipes_path
