@@ -5,7 +5,7 @@
 <h3><%= link_to 'Create New List', new_list_path %></h3>
 <img src="https://media.giphy.com/media/B7o99rIuystY4/giphy.gif">
 
-<% @lists.each do |list| %>
+<% current_user.lists.each do |list| %>
     <p><%= link_to list.name, list_path(list) %></p>
 <% end %>
 
