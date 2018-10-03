@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit,]
+  before_action :set_user, only: [:show, :edit]
   # before_action :redirect_to_login_page_if_not_logged_in, except: [:new, :create]  
   def index
     @users = User.all
@@ -17,8 +17,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
 
-    if user.valid?
-      user.save
+    if user.save
       session[:user_id] = user.id
       redirect_to user
     else

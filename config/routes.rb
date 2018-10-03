@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   resources :recipes
   resources :items
   resources :lists
