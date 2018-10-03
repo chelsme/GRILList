@@ -8,11 +8,15 @@
     <p><%= link_to list.name, list_path(list) %></p>
   <% end %>
 
+  <h4>Most common item on the lists is "<%= most_common_list_item.name %>"</h4>
+
   <h3><%= @user.name%>'s Recipes</h3>
 
   <% @user.recipes.each do |recipe| %>
     <p><%= link_to recipe.name, recipe_path(recipe) %></p>
   <% end %>  
+
+  <h4>Most common item on the recipes is "<%= most_common_recipe_item.name %>"</h4>
 
   <%= button_to "Create List", new_list_path, method: :get %>
   <%= button_to "Create Recipe", new_recipe_path, method: :get %>
