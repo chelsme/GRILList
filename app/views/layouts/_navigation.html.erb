@@ -1,3 +1,14 @@
 <ul class="nav">
-  <%= render 'layouts/navigation_links' %>
+  <% if logged_in? %>
+    <li><%= link_to image_tag('homegrill.png'), user_path(current_user) %></li>
+  <% else %>
+    <li><%= link_to image_tag('homegrill.png'), users_path %></li>
+  <% end %>
+  <li><%= link_to image_tag('recipes.png'), recipes_path %></li>
+  <li><%= link_to image_tag('list.png'), lists_path %></li>
+  <% if logged_in? %>
+    <li><%= link_to image_tag('logout.png'), logout_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to image_tag('login.png'), login_path %></li>
+  <% end %>
 </ul>
