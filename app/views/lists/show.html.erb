@@ -1,7 +1,8 @@
 <% content_for :title do %>My Title<% end %>
 <% content_for :description do %>My Description<% end %>
 
-<h1><%= @list.name %></h1>
+<% if logged_in? %>
+    <h1><%= @list.name %></h1>
     <ul>
         <% @list.list_items.each do |list_item| %>
             <li><%= list_item.item_quantity %> <%= list_item.item.name %></li>
@@ -15,3 +16,6 @@
     <%= form_tag list_path, method: 'delete' do %>
         <%= submit_tag "Delete list" %>
     <% end %>
+<% else %>
+    <%= link_to 'Login', login_path %>
+<% end %>

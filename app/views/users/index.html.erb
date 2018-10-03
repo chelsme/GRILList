@@ -1,10 +1,14 @@
 <% content_for :title do %>My Title<% end %>
 <% content_for :description do %>My Description<% end %>
 
-<img src="https://media.giphy.com/media/xT4uQyKtTSwg4h9zd6/giphy.gif">
-<h3><%= link_to 'Sign up', signup_path %></h3>
+<%= flash[:error] %>
 
-<% @users.each do |user| %>
-  <h3><%= user.name %></h3>
+<%= form_with url: '/sessions' do |f| %>
+  <%= f.text_field :username, placeholder: "Username" %>
+  <%= f.password_field :password, placeholder: "Password" %>
+  <%= f.submit 'Login'%>
 <% end %>
 
+<h3>or</h3>
+
+<%= link_to 'Sign Up', signup_path %>

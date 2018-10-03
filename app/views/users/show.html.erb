@@ -1,20 +1,18 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
 <% content_for :title do %>My Title<% end %>
 <% content_for :description do %>My Description<% end %>
 
 <% if @current_user %>
-  <h1><%= @user.name%></h1>
-
-  Username is'<%= @user.username %>
+  <h3><%= @user.name%>'s Lists</h3>
 
   <% @user.lists.each do |list| %>
     <p><%= link_to list.name, list_path(list) %></p>
-    <% end %>
+  <% end %>
 
-    <% @user.recipes.each do |recipe| %>
+  <h3><%= @user.name%>'s Recipes</h3>
+
+  <% @user.recipes.each do |recipe| %>
     <p><%= link_to recipe.name, recipe_path(recipe) %></p>
-    <% end %>  
+  <% end %>  
 
   <%= button_to "Create List", new_list_path, method: :get %>
   <%= button_to "Create Recipe", new_recipe_path, method: :get %>

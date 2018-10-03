@@ -1,12 +1,12 @@
 <% content_for :title do %>My Title<% end %>
 <% content_for :description do %>My Description<% end %>
 
-<h1>Lists</h1>
-<h3><%= link_to 'Create New List', new_list_path %></h3>
-<img src="https://media.giphy.com/media/B7o99rIuystY4/giphy.gif">
+<% if logged_in? %>
+    <h3><%= link_to 'Create New List', new_list_path %></h3>
 
-<% current_user.lists.each do |list| %>
-    <p><%= link_to list.name, list_path(list) %></p>
+    <% current_user.lists.each do |list| %>
+        <p><%= link_to list.name, list_path(list) %></p>
+    <% end %>
+<% else %>
+    <%= link_to 'Sign Up', signup_path %> or <%= link_to 'Login', login_path %>
 <% end %>
-
-
