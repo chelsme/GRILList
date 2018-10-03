@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe  = Recipe.new(recipe_params)
-    if @recipe.save
+    if @recipe.update(user_id: current_user.id)
       redirect_to @recipe
     else
       flash[:errors] = @recipe.errors.full_messages
