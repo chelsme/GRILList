@@ -2,10 +2,13 @@
  * Simple CSS stylesheet for a navigation bar and flash messages.
  */
 main {
-  background-color: #eee;
-  padding-bottom: 80px;
+  padding: 20px;
   width: 100%;
+  font-family: 'Acme', sans-serif;
+  font-size: 30px;
+  text-align: center;
   }
+  
 header {
   border: 1px solid #d4d4d4;
   background-image: linear-gradient(to bottom, white, #f2f2f2);
@@ -14,10 +17,27 @@ header {
   -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Acme', sans-serif;
+  height: 110px;
 }
+
+h1 {
+  position: absolute;
+  left: 30px;
+  top: 0px;
+  margin: 0;
+  font-size: 110px;
+}
+
+ul.nav {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+}
+
 ul.nav li {
   display: inline;
+  float: right;
 }
 ul.nav li a {
   padding: 10px 15px 10px;
@@ -27,7 +47,7 @@ ul.nav li a {
 }
 
 ul.nav li img {
-  width: 100px;
+    height: 90px;
 }
 
 .flash_notice, .flash_alert {
@@ -51,4 +71,10 @@ ul.nav li img {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
+}
+
+input, textarea {
+  height: 30px;
+  width: 300px;
+  font-size: 30px !important;
 }

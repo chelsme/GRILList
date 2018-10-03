@@ -7,10 +7,11 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
   </head>
   <body>
     <header>
-      <%= render 'layouts/navigation' %>
+      <h1>GRILList</h1><%= render 'layouts/navigation' %>
     </header>
     <main role="main">
       <%= render 'layouts/messages' %>
