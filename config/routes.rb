@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  root to: 'sessions#new'
   resources :recipes
   resources :items
   resources :lists
