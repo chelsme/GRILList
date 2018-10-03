@@ -2,22 +2,24 @@ require 'test_helper'
 
 class ListsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get lists_index_url
+    get lists_path
     assert_response :success
   end
 
   test "should get new" do
-    get lists_new_url
+    get new_list_path
     assert_response :success
   end
 
   test "should get show" do
-    get lists_show_url
+    list = lists(:one)
+    get list_path(list)
     assert_response :success
   end
 
   test "should get edit" do
-    get lists_edit_url
+    list = lists(:one)
+    get edit_list_path(list)
     assert_response :success
   end
 
