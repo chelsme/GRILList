@@ -4,14 +4,20 @@
 
 html {
   width: 100%;
+  background: url(leaves.jpg) no-repeat;
+  background-size: cover;
 }
 
 main {
   padding: 20px;
-  max-width: 100%;
+  width: 95%;
+  margin: auto;
   font-family: 'Acme', sans-serif;
   font-size: 30px;
   text-align: center;
+  background-color: #f9f9f9;
+  opacity: 0.9;
+  min-height: 480px;
   }
   
 header {
@@ -84,7 +90,7 @@ ul.nav li img {
 
 input, textarea {
   height: 30px;
-  width: 300px;
+  width: 350px;
   font-size: 30px !important;
 }
 
@@ -92,5 +98,5 @@ select {
   font-size: 20px;
   padding: 5px;
   height: 40px;
-  width: 300px;
+  width: 350px;
 }
