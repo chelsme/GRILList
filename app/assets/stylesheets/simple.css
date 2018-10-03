@@ -1,9 +1,14 @@
 /*
  * Simple CSS stylesheet for a navigation bar and flash messages.
  */
+
+html {
+  width: 100%;
+}
+
 main {
   padding: 20px;
-  width: 100%;
+  max-width: 100%;
   font-family: 'Acme', sans-serif;
   font-size: 30px;
   text-align: center;
@@ -27,6 +32,10 @@ h1 {
   top: 0px;
   margin: 0;
   font-size: 110px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 ul.nav {
@@ -77,4 +86,11 @@ input, textarea {
   height: 30px;
   width: 300px;
   font-size: 30px !important;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px;
+  height: 40px;
+  width: 300px;
 }
