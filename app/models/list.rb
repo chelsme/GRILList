@@ -5,6 +5,8 @@ class List < ApplicationRecord
     has_many :users, through: :user_lists
     accepts_nested_attributes_for :items, :list_items
 
+    validates :name, presence: true
+
     # Here we want to 
     def items_attributes=(item_attributes)
         item_attributes.values.each do |item_attributes|
