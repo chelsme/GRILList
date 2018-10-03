@@ -1,5 +1,6 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% content_for :title do %>My Title<% end %>
+<% content_for :description do %>My Description<% end %>
+
 <%= flash[:error] %>
 
 <%= form_with model: User.new do |f| %>
