@@ -20,4 +20,11 @@
         <%= submit_tag "Delete recipe" %>
     <% end %>
     <br>
+
+    <%= form_tag(add_to_list_path, method: "post") do %>
+        <%= select_tag "list", options_from_collection_for_select(current_user.lists, "id", "name") %>
+        <%= submit_tag("Search") %>
+    <% end %>
+
+
     <%= link_to 'Back to all recipes', recipes_path %>

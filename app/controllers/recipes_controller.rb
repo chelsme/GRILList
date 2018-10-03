@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_list]
 
   def index
     @recipes = Recipe.all
@@ -44,6 +44,14 @@ class RecipesController < ApplicationController
     @recipe.destroy
     redirect_to recipes_path
   end
+
+    def add_to_list
+      @recipe.items.each do |item|
+        ListItem.find_or_create_by(item_id: item.id, list_id: params[:list])
+      end
+      @list = List.find(params[:list])
+      redirect_to @list
+    end
 
   private
 
