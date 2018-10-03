@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     freq = arr.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
     arr.max_by { |v| freq[v] }
   end
+  
 
   def most_common_list_item
     list_items = Array.new(0)
