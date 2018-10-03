@@ -25,6 +25,11 @@ ul.nav li a {
   text-decoration: none;
   text-shadow: 0 1px 0 white;
 }
+
+ul.nav li img {
+  width: 100px;
+}
+
 .flash_notice, .flash_alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
