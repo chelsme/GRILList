@@ -52,16 +52,18 @@ class UsersController < ApplicationController
     end
     recipe_items.flatten!
     data_hash = recipe_items.inject(Hash.new(0)) { |item,v| item[v] += 1; item }
+    data_hash = data_hash.sort_by {|i,v| -v}
     @data_recipe = data_hash.map { |item,count| [item.name, count]}
   end
 
   def list_analytics
     list_items = Array.new(0)
-    list.all.each do |list|
+    List.all.each do |list|
       list_items << list.items
     end
     list_items.flatten!
     data_hash = list_items.inject(Hash.new(0)) { |item,v| item[v] += 1; item }
+    data_hash = data_hash.sort_by {|i,v| -v}
     @data_list = data_hash.map { |item,count| [item.name, count]}
   end
 end

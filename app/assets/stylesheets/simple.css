@@ -78,3 +78,14 @@ input, textarea {
   width: 300px;
   font-size: 30px !important;
 }
+
+div#chart1 {
+float: right;
+width: 50%;
+height: 500px;
+}
+
+div#chart2 {
+width: 50%;
+height: 500px;
+}
