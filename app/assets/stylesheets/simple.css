@@ -112,3 +112,10 @@ select {
   width: 350px;
 }
 
+button {
+    height:50px !important; 
+    width:200px !important; 
+    position:relative;
+    font-size: 20px !important;
+}
+
