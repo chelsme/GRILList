@@ -18,9 +18,9 @@
 
   
 
-  <%= button_to "Create List", new_list_path, method: :get %>
-  <%= button_to "Create Recipe", new_recipe_path, method: :get %>
-  <%= button_to "Logout", '/sessions', method: :delete %>
+  <%= button_to "Create List", new_list_path, method: :get, class: 'button' %>
+  <%= button_to "Create Recipe", new_recipe_path, method: :get, class: 'button' %>
+  <%= button_to "Logout", '/sessions', method: :delete, class: 'button' %>
   <br>
 
   <%= render 'analytics' %>
