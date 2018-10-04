@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :share]
 
   def index
     @lists = List.all
@@ -48,6 +48,16 @@ class ListsController < ApplicationController
     end
     @list.destroy
     redirect_to lists_path
+  end
+
+  def share
+    if UserList.find_by(user_id: params[:user_id], list_id: @list.id)
+      flash[:shared] = "Already shared list with #{User.find(params[:user_id]).name}!"
+    else
+      UserList.find_or_create_by(user_id: params[:user_id], list_id: @list.id)
+      flash[:shared] = "Shared list with #{User.find(params[:user_id]).name}!"
+    end
+    redirect_to @list
   end
 
   private

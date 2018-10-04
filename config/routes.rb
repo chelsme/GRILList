@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/recipes/:id', to: 'recipes#add_to_list', as: 'add_to_list'
+  post '/lists/:id', to: 'lists#share', as: 'share_list'
 end
