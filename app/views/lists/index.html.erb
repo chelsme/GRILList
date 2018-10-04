@@ -13,8 +13,9 @@
         <% @search_lists.each do |list| %>
             <p><%= link_to list.name, list_path(list) %></p>
         <% end %>
+        <hr>
     <% end %>
-
+    
     <h3><%= link_to 'Create New List', new_list_path %></h3>
 
     <% current_user.lists.each do |list| %>

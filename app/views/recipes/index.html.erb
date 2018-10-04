@@ -12,6 +12,7 @@
         <% @search_recipes.each do |recipe| %>
             <p><%= link_to recipe.name, recipe_path(recipe) %></p>
         <% end %>
+        <hr>
     <% end %>
 
     <h3><%= link_to 'Create New Recipe', new_recipe_path %></h3>
