@@ -52,26 +52,29 @@ class ListsController < ApplicationController
 
   def share
     if UserList.find_by(user_id: params[:user_id], list_id: @list.id)
-      flash[:shared] = "Already shared list with #{User.find(params[:user_id]).name}!"
+      flash[:alert] = "Already shared list with #{User.find(params[:user_id]).name}!"
     else
       UserList.find_or_create_by(user_id: params[:user_id], list_id: @list.id)
-      flash[:shared] = "Shared list with #{User.find(params[:user_id]).name}!"
+      flash[:notice] = "Shared list with #{User.find(params[:user_id]).name}!"
     end
     redirect_to @list
   end
 
   def search
-    search_item = Item.find_by(name: params[:q])
-    if search_item.nil?
-      flash[:alert] = 'Found no list with the seach item'
+    # search_item = Item.find_by(name: params[:q])
+    @q = params[:q].downcase
+    @search_item = Item.where('name LIKE ?', "%#{@q}%")
+
+
+    if @search_item == [] || @q == "" || @q == " "
+      flash[:alert] = "No lists include #{@q}."
       render :index
     else
       flash.clear
-      @search_lists = search_item.lists
+      @search_item
       render :index
     end
   end
-
   private
 
   def list_params

@@ -54,13 +54,16 @@ class RecipesController < ApplicationController
   end
 
   def search
-    search_item = Item.find_by(name: params[:q])
-    if search_item.nil?
-      flash[:alert] = 'Found no recipe with the seach item'
+    # search_item = Item.find_by(name: params[:q])
+    @q = params[:q].downcase
+    @search_item = Item.where('name LIKE ?', "%#{@q}%")
+
+    if @search_item == [] || @q == "" || @q == " "
+      flash[:alert] = "No recipes include #{@q}."
       render :index
     else
       flash.clear
-      @search_recipes = search_item.recipes
+      @search_item
       render :index
     end
   end

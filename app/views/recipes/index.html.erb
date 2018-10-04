@@ -8,9 +8,11 @@
         <%= form.submit 'Search' %>
     <% end %>
 
-    <% unless @search_recipes.nil? %>
-        <% @search_recipes.each do |recipe| %>
+    <% unless @search_item.nil? || @search_item == [] || @q == "" || @q == " " %>
+        <% @search_item.each do |item| %>
+        <% item.recipes.each do |recipe| %>
             <p><%= link_to recipe.name, recipe_path(recipe) %></p>
+        <% end %>
         <% end %>
         <hr>
     <% end %>
