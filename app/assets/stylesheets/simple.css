@@ -40,6 +40,10 @@ h1 {
   font-size: 110px;
 }
 
+h2, h3 {
+  text-decoration: underline;
+}
+
 ul {
   list-style-type: none;
 }
@@ -92,6 +96,12 @@ input, textarea {
   height: 30px;
   width: 350px;
   font-size: 30px !important;
+  margin-left: 10px;
+}
+
+textarea {
+  height: 300px;
+  width: 700px;
 }
 
 div#chart1 {
@@ -106,16 +116,21 @@ height: 500px;
 }
 
 select {
-  font-size: 20px;
+  font-size: 18px;
   padding: 5px;
   height: 40px;
   width: 350px;
+  margin-left: 10px;
 }
 
 button {
     height:50px !important; 
     width:200px !important; 
     position:relative;
-    font-size: 20px !important;
+    font-size: 18px !important;
 }
 
+hr {
+  width: 650px;
+  border: 2px solid #343433;
+}

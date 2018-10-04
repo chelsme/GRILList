@@ -1,14 +1,6 @@
-<% content_for :title do %>My Title<% end %>
+<% content_for :title do %>GRILList<% end %>
 <% content_for :description do %>My Description<% end %>
 
 <%= flash[:error] %>
 
-<%= form_with url: '/sessions' do |f| %>
-  <%= f.text_field :username, placeholder: "Username" %>
-  <%= f.password_field :password, placeholder: "Password" %>
-  <p><%= f.submit 'Login' %></p>
-<% end %>
-
-<h3>or</h3>
-
-<%= link_to 'Sign Up', signup_path %>
+<%= render 'layouts/closed_session' %>

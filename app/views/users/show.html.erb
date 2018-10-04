@@ -1,16 +1,16 @@
-<% content_for :title do %>My Title<% end %>
+<% content_for :title do %><%= @user.name.titlecase%><% end %>
 <% content_for :description do %>My Description<% end %>
 
 <% if @current_user %>
-  <h3><%= @user.name%>'s Lists</h3>
+  <h3><%= @user.name.titlecase%>'s Lists</h3>
 
   <% @user.lists.each do |list| %>
     <p><%= link_to list.name, list_path(list) %></p>
   <% end %>
 
-  
+  <hr>
 
-  <h3><%= @user.name%>'s Recipes</h3>
+  <h3><%= @user.name.titlecase%>'s Recipes</h3>
 
   <% @user.recipes.each do |recipe| %>
     <p><%= link_to recipe.name, recipe_path(recipe) %></p>
@@ -22,6 +22,8 @@
   <%= button_to "Create Recipe", new_recipe_path, method: :get, class: 'button' %>
   <%= button_to "Logout", '/sessions', method: :delete, class: 'button' %>
   <br>
+
+  <hr>
 
   <%= render 'analytics' %>
   

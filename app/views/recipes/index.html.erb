@@ -20,5 +20,5 @@
         <p><%= link_to recipe.name, recipe_path(recipe) %></p>
     <% end %>
 <% else %>
-    <%= link_to 'Sign Up', signup_path %> or <%= link_to 'Login', login_path %>
+    <%= render 'layouts/closed_session' %>
 <% end %>

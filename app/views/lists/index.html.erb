@@ -1,4 +1,4 @@
-<% content_for :title do %>My Title<% end %>
+<% content_for :title do %>Lists<% end %>
 <% content_for :description do %>My Description<% end %>
 
 <% if logged_in? %>
@@ -8,5 +8,5 @@
         <p><%= link_to list.name, list_path(list) %></p>
     <% end %>
 <% else %>
-    <%= link_to 'Sign Up', signup_path %> or <%= link_to 'Login', login_path %>
+    <%= render 'layouts/closed_session' %>
 <% end %>
