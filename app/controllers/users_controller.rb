@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to user
     else
-      flash[:error] = 'Passwords do not matcfh'
+      flash[:alert] = 'Passwords do not match!'
       redirect_to new_user_path
     end
   end
@@ -43,6 +43,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :username, :password, :password_confirmation)
+
   end
 
   def recipe_analytics

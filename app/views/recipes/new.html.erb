@@ -12,7 +12,7 @@
 <% if logged_in? %>
     <%= form_with model: @recipe do |f| %>
         <h2>Recipe name:<%= f.text_field :name %></h2>
-        <h2>Recipe by:<%= current_user.name %></h2>
+        <h4>Recipe by: <%= current_user.name.titlecase %></h4>
         
         <h2>Items:</h2><%= f.fields_for :items do |item| %>
             <p><%= item.text_field :name, placeholder: 'Item Name' %></p>

@@ -12,6 +12,7 @@ class List < ApplicationRecord
         item_attributes.values.each do |item_attributes|
             if item_attributes[:name] != ""
                 item = Item.find_or_create_by(item_attributes)
+                item.update(name: item.name.downcase)
                 self.items << item
             end
         end
