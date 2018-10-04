@@ -3,7 +3,7 @@ require 'test_helper'
 class RecipeTest < ActiveSupport::TestCase
   test "should not save recipe with invalid attributes" do
     recipe = Recipe.new
-    assert_not recipe.save, "Saved the recipe without attributes"
+    assert_not recipe.save, "Could not save the recipe without attributes"
   end
 
   test "should be able to edit recipe" do

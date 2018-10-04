@@ -1,4 +1,4 @@
-<% content_for :title do %>My Title<% end %>
+<% content_for :title do %>Edit <%= @recipe.name.titlecase %> Recipe<% end %>
 <% content_for :description do %>My Description<% end %>
 
 <% if flash[:errors] %>
@@ -10,13 +10,13 @@
 <% end %>
 
 <%= form_with model: @recipe do |f| %>
-    <h2>Recipe name: <%= f.text_field :name %></h2>
-    <h2>Recipe by: <%= f.collection_select :user_id, User.all, :id, :name %></h2>
+    <h2>Recipe name:<%= f.text_field :name %></h2>
+    <h4>Recipe by: <%= current_user.name.titlecase %></h4>
 
-    <h2>Items: </h2><%= f.fields_for :items do |item| %>
+    <h2>Items:</h2><%= f.fields_for :items do |item| %>
         <p><%#= @recipe.quantity %> <%= item.text_field :name, placeholder: 'Add new item' %></p>
     <% end %>
-    <h2>Instructions: <%= f.text_area :instructions %></h2>
-
+    <h2>Instructions:</h2>
+    <p><%= f.text_area :instructions %></p>
     <%= f.submit %>
 <% end %>

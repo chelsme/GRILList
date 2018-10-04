@@ -17,8 +17,8 @@
         <h2>Items: </h2><%= f.fields_for :items do |item| %>
             <p><%= item.text_field :name, placeholder: 'Item Name' %></p>
         <% end %>
-        <h2>Instructions: <%= f.text_area :instructions %></h2>
-
+        <h2>Instructions:</h2>
+        <p><%= f.text_area :instructions %></p>
         <%= f.submit %>
     <% end %>
 <% end %>

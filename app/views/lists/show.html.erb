@@ -1,10 +1,14 @@
 <% flash[:shared] %>
 
-<% content_for :title do %>My Title<% end %>
+<% content_for :title do %><%= @list.name.titlecase %> List<% end %>
 <% content_for :description do %>My Description<% end %>
 
 <% if logged_in? %>
-    <h2><%= @list.name %></h2>
+    <% if @list.name.downcase.include?('list')%>
+        <h2><%= @list.name.titlecase %></h2>
+    <% else %>
+        <h2><%= @list.name.titlecase + " List" %></h2>
+    <% end %>
         <% @list.list_items.each do |list_item| %>
             <p><%= list_item.item.name %></p>
         <% end %>
@@ -16,8 +20,10 @@
     <%= form_tag list_path, method: 'delete' do %>
         <%= submit_tag "Delete list" %>
     <% end %>
+    <br>
+  <hr>
 
-    <h3>Share list with:</h3>
+  <h3>Share list with:</h3>
     <%= form_tag share_list_path, method: 'post' do %>
         <p><%= select_tag "user_id", options_from_collection_for_select(User.where.not(id: current_user.id), "id", "name") %></p>
         <%= submit_tag "Share" %>

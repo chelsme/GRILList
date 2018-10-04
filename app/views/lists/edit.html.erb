@@ -1,4 +1,4 @@
-<% content_for :title do %>My Title<% end %>
+<% content_for :title do %>Edit <%= @list.name.titlecase %> List<% end %>
 <% content_for :description do %>My Description<% end %>
 
 <% if flash[:errors] %>
