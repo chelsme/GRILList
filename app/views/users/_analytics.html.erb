@@ -15,8 +15,13 @@
     data = [['Item name', 'Count']].concat(data);
     data = google.visualization.arrayToDataTable(data);
     var options = {
-        title: 'Items from our recipes',
+        title: 'Items from all Recipes',
         pieHole: 0.4,
+        titleTextStyle: { 
+          fontSize: 18,
+          bold: true,
+          italic: false 
+          },
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('chart1'));
@@ -37,8 +42,13 @@
     data = [['Item name', 'Count']].concat(data);
     data = google.visualization.arrayToDataTable(data);
     var options = {
-        title: 'Items from our lists',
+        title: 'Items from all Lists',
         pieHole: 0.4,
+        titleTextStyle: { 
+        fontSize: 18,
+        bold: true,
+        italic: false 
+        },
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('chart2'));
