@@ -3,12 +3,12 @@
 
 <%= flash[:error] %>
 
-<% if logged_in? %>
+<% unless logged_in? %>
   <%= form_with model: User.new do |f| %>
-    <p>Name: <%= f.text_field :name, placeholder: "Type your full name" %></p>
-    <p>Username: <%= f.text_field :username, placeholder: "Choose a cute animal" %></p>
-    <p>Password: <%= f.password_field :password, placeholder: "Hint: not 'dolphin'" %></p>
-    <p>Confirm: <%= f.password_field :password_confirmation, placeholder: "Confirm your password" %></p>
+    <p>Name: &nbsp;<%= f.text_field :name, placeholder: "Type your full name" %></p>
+    <p>Username: &nbsp;<%= f.text_field :username, placeholder: "Choose a cute animal" %></p>
+    <p>Password: &nbsp;<%= f.password_field :password, placeholder: "Hint: not 'dolphin'" %></p>
+    <p>Confirm: &nbsp;<%= f.password_field :password_confirmation, placeholder: "Confirm your password" %></p>
     <%= f.submit %>
   <% end %>
 <% end %>

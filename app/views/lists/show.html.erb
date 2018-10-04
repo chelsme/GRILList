@@ -1,13 +1,13 @@
+<% flash[:shared] %>
+
 <% content_for :title do %>My Title<% end %>
 <% content_for :description do %>My Description<% end %>
 
 <% if logged_in? %>
-    <h1><%= @list.name %></h1>
-    <ul>
+    <h2><%= @list.name %></h2>
         <% @list.list_items.each do |list_item| %>
-            <li><%= list_item.item_quantity %> <%= list_item.item.name %></li>
+            <p><%= list_item.item.name %></p>
         <% end %>
-    </ul>
 
     <%= form_tag edit_list_path, method: 'get' do %>
         <%= submit_tag "Edit list" %>
@@ -16,6 +16,15 @@
     <%= form_tag list_path, method: 'delete' do %>
         <%= submit_tag "Delete list" %>
     <% end %>
+
+    <h3>Share list with:</h3>
+    <%= form_tag share_list_path, method: 'post' do %>
+        <p><%= select_tag "user_id", options_from_collection_for_select(User.where.not(id: current_user.id), "id", "name") %></p>
+        <%= submit_tag "Share" %>
+    <% end %>
+    <br>
+
+    <%= link_to 'Back to all lists', lists_path %>
 <% else %>
     <%= link_to 'Login', login_path %>
 <% end %>

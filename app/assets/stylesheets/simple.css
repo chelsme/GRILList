@@ -1,12 +1,23 @@
 /*
  * Simple CSS stylesheet for a navigation bar and flash messages.
  */
+
+html {
+  width: 100%;
+  background: url(leaves.jpg) no-repeat;
+  background-size: cover;
+}
+
 main {
   padding: 20px;
-  width: 100%;
+  width: 95%;
+  margin: auto;
   font-family: 'Acme', sans-serif;
   font-size: 30px;
   text-align: center;
+  background-color: #f9f9f9;
+  opacity: 0.9;
+  min-height: 480px;
   }
   
 header {
@@ -27,6 +38,10 @@ h1 {
   top: 0px;
   margin: 0;
   font-size: 110px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 ul.nav {
@@ -75,7 +90,7 @@ ul.nav li img {
 
 input, textarea {
   height: 30px;
-  width: 300px;
+  width: 350px;
   font-size: 30px !important;
 }
 
@@ -88,4 +103,11 @@ height: 500px;
 div#chart2 {
 width: 50%;
 height: 500px;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px;
+  height: 40px;
+  width: 350px;
 }

@@ -2,30 +2,27 @@
 <% content_for :description do %>My Description<% end %>
 
 <% if logged_in? %>
-    <h1><%= @recipe.name.titlecase %></h1>
+    <h2><%= @recipe.name.titlecase %></h2>
         <h3>Recipe by: <%= current_user.name %> </h3>
         <h3>Ingredients: </h3>
-        <ul>
             <% @recipe.recipe_items.each do |recipe_item| %>
-                <li><%= recipe_item.item_quantity %> <%= recipe_item.item.name %>  </li>
+                <p><%= recipe_item.item.name %></p>
             <% end %>
-        </ul>
         <h3>Instructions: </h3>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <%= @recipe.instructions %>
-        <br><br>
+        <br>
 
         <%= form_tag edit_recipe_path, method: 'get' do %>
             <%= submit_tag "Edit recipe" %>
         <% end %>
-        <br>
         <%= form_tag recipe_path(@recipe.id), method: 'delete' do %>
             <%= submit_tag "Delete recipe" %>
         <% end %>
 
         <h3>Add Items to list:</h3>
         <%= form_tag(add_to_list_path, method: "post") do %>
-            <%= select_tag "list", options_from_collection_for_select(current_user.lists, "id", "name") %>
+            <p><%= select_tag "list", options_from_collection_for_select(current_user.lists, "id", "name") %></p>
             <%= submit_tag("Add") %>
         <% end %>
         <br>
