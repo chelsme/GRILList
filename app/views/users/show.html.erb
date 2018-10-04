@@ -7,7 +7,8 @@
   <% @user.lists.each do |list| %>
     <p><%= link_to list.name, list_path(list) %></p>
   <% end %>
-
+  <%= button_to "Create List", new_list_path, method: :get, class: 'button' %>
+  <br>
   <hr>
 
   <h3><%= @user.name.titlecase%>'s Recipes</h3>
@@ -15,12 +16,9 @@
   <% @user.recipes.each do |recipe| %>
     <p><%= link_to recipe.name, recipe_path(recipe) %></p>
   <% end %>  
+ 
 
-  
-
-  <%= button_to "Create List", new_list_path, method: :get, class: 'button' %>
   <%= button_to "Create Recipe", new_recipe_path, method: :get, class: 'button' %>
-  <%= button_to "Logout", '/sessions', method: :delete, class: 'button' %>
   <br>
 
   <hr>
