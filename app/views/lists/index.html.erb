@@ -2,6 +2,19 @@
 <% content_for :description do %>My Description<% end %>
 
 <% if logged_in? %>
+
+    <%= form_with url: '/list_search', method: :get, local: true do |form| %>
+        <%= form.label :q, 'Search for list with item:' %>
+        <%= form.text_field :q, id: :q %>
+        <%= form.submit 'Search' %>
+    <% end %>
+
+    <% unless @search_lists.nil? %>
+        <% @search_lists.each do |list| %>
+            <p><%= link_to list.name, list_path(list) %></p>
+        <% end %>
+    <% end %>
+
     <h3><%= link_to 'Create New List', new_list_path %></h3>
 
     <% current_user.lists.each do |list| %>

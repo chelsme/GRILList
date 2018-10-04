@@ -1,11 +1,12 @@
 <% content_for :title do %>Recipes<% end %>
 
+<% if logged_in? %>
 <%# make sure you config 'routes' get '/search', to: 'indexs#search' in your controller %>
-<%= form_with url: '/search', method: :get, local: true do |form| %>
-    <%= form.label :q, 'Search for recipe with item:' %>
-    <%= form.text_field :q, id: :q %>
-    <%= form.submit 'Search' %>
-<% end %>
+    <%= form_with url: '/recipe_search', method: :get, local: true do |form| %>
+        <%= form.label :q, 'Search for recipe with item:' %>
+        <%= form.text_field :q, id: :q %>
+        <%= form.submit 'Search' %>
+    <% end %>
 
     <% unless @search_recipes.nil? %>
         <% @search_recipes.each do |recipe| %>
@@ -13,7 +14,6 @@
         <% end %>
     <% end %>
 
-<% if logged_in? %>
     <h3><%= link_to 'Create New Recipe', new_recipe_path %></h3>
 
     <% current_user.recipes.each do |recipe| %>

@@ -60,6 +60,18 @@ class ListsController < ApplicationController
     redirect_to @list
   end
 
+  def search
+    search_item = Item.find_by(name: params[:q])
+    if search_item.nil?
+      flash[:alert] = 'Found no list with the seach item'
+      render :index
+    else
+      flash.clear
+      @search_lists = search_item.lists
+      render :index
+    end
+  end
+
   private
 
   def list_params

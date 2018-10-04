@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   post '/recipes/:id', to: 'recipes#add_to_list', as: 'add_to_list'
   post '/lists/:id', to: 'lists#share', as: 'share_list'
 
-  get '/search', to: 'recipes#search', as: 'recipe_search'
+  get '/recipe_search', to: 'recipes#search', as: 'recipe_search'
+  get '/list_search', to: 'lists#search', as: 'list_search'
 end
