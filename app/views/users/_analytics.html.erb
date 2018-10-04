@@ -1,12 +1,15 @@
-<div id="chart" style="width: auto; height: 600px;"></div>
+<h3>Analytics: </h3>
+<h4>Most common item on the recipes is "<%= most_common_recipe_item.name %>."</h4>
+
+<div id="chart1" style="text-align: center; width: 400px; height: 300px;"></div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <%= javascript_tag do -%>
-  google.charts.load('current', {'packages':['bar']});
+  google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() {
-    var data = JSON.parse('<%= @data.to_json.html_safe -%>');
+    var data = JSON.parse('<%= @data_recipe.to_json.html_safe -%>');
     data = [['Item name', 'Count']].concat(data);
     data = google.visualization.arrayToDataTable(data);
     var options = {
@@ -15,7 +18,32 @@
       }
     };
 
-    var chart = new google.charts.Bar(document.getElementById('chart'));
-    chart.draw(data, google.charts.Bar.convertOptions(options));
+    var chart = new google.visualization.PieChart(document.getElementById('chart1'));
+
+        chart.draw(data, options);
+  }
+<% end -%>
+
+<h4>Most common item on the lists is "<%= most_common_list_item.name %>."</h4>
+
+<div id="chart2" style="text-align: center; width: 400px; height: 300px;"></div>
+
+<%= javascript_tag do -%>
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = JSON.parse('<%= @data_list.to_json.html_safe -%>');
+    data = [['Item name', 'Count']].concat(data);
+    data = google.visualization.arrayToDataTable(data);
+    var options = {
+      chart: {
+        title: 'Items from our lists',
+      }
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('chart1'));
+
+        chart.draw(data, options);
   }
 <% end -%>

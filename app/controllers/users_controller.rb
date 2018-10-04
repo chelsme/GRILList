@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit]
   before_action :recipe_analytics, only: [:show]
+  before_action :list_analytics, only: [:show]
   # before_action :redirect_to_login_page_if_not_logged_in, except: [:new, :create]  
   def index
     @users = User.all
@@ -50,6 +51,17 @@ class UsersController < ApplicationController
       recipe_items << recipe.items
     end
     recipe_items.flatten!
-    @data = recipe_items.inject(Hash.new(0)) { |item,v| item[v] += 1; item }
+    data_hash = recipe_items.inject(Hash.new(0)) { |item,v| item[v] += 1; item }
+    @data_recipe = data_hash.map { |item,count| [item.name, count]}
+  end
+
+  def list_analytics
+    list_items = Array.new(0)
+    list.all.each do |list|
+      list_items << list.items
+    end
+    list_items.flatten!
+    data_hash = list_items.inject(Hash.new(0)) { |item,v| item[v] += 1; item }
+    @data_list = data_hash.map { |item,count| [item.name, count]}
   end
 end
