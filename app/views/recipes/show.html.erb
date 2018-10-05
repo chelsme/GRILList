@@ -3,7 +3,7 @@
 
 <% if logged_in? %>
     <h2><%= @recipe.name.titlecase %></h2>
-        <h4>Recipe by: &nbsp;<%= current_user.name.titlecase %> </h4>
+        <h4>Recipe by: &nbsp;<%= current_user.name.titlecase %> </h4>  <%= image_tag(@recipe.img_url) %>
         <h3>Ingredients: </h3>
             <% @recipe.recipe_items.each do |recipe_item| %>
                 <p><%= recipe_item.item.name %></p>
@@ -11,10 +11,11 @@
 
   <hr>
 
-  <h3>Instructions: </h3>
+    <div id="recipe_instructions"><h3>Instructions: </h3>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <%= @recipe.instructions %>
         <br>
+    </div>
 
         <%= form_tag edit_recipe_path, method: 'get' do %>
             <%= submit_tag "Edit recipe" %>
