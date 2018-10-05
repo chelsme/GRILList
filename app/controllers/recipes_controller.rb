@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
     if @recipe.update(user_id: current_user.id)
       redirect_to @recipe
     else
-      flash[:errors] = @recipe.errors.full_messages
+      flash[:alert] = @recipe.errors.full_messages
       redirect_to new_recipe_path
     end
   end
@@ -34,6 +34,9 @@ class RecipesController < ApplicationController
   def update
     RecipeItem.where(recipe_id: params[:id]).destroy_all
     @recipe.update(recipe_params)
+    if @recipe.img_url == ""
+      @recipe.update(img_url: "default_recipe_img.png")
+    end
     redirect_to @recipe
   end
 
