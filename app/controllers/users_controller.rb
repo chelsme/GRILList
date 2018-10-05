@@ -55,6 +55,7 @@ class UsersController < ApplicationController
     data_hash = recipe_items.inject(Hash.new(0)) { |item,v| item[v] += 1; item }
     data_hash = data_hash.sort_by {|i,v| -v}
     @data_recipe = data_hash.map { |item,count| [item.name, count]}
+    @data_recipe = @data_recipe[0..10]
   end
 
   def list_analytics
@@ -66,5 +67,6 @@ class UsersController < ApplicationController
     data_hash = list_items.inject(Hash.new(0)) { |item,v| item[v] += 1; item }
     data_hash = data_hash.sort_by {|i,v| -v}
     @data_list = data_hash.map { |item,count| [item.name, count]}
+    @data_list = @data_list[0..10]
   end
 end

@@ -123,7 +123,7 @@ select {
   margin-left: 10px;
 }
 
-button {
+button, .button {
     height:50px !important; 
     width:200px !important; 
     position:relative;
