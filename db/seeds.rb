@@ -14,7 +14,7 @@ kim = User.create(name: "Kim", username: "kimme", password: "cutepuppy")
 trung = User.create(name: "Trung", username: "spark", password: "cutecat")
 
 data_hash.each do |data|
-  recipe = Recipe.create(name: data['name'],instructions: data['steps'].join(' '), user_id: rand(1..3))
+  recipe = Recipe.create(name: data['name'],instructions: data['steps'].join(' '), img_url: data['imageURL'], user_id: rand(1..3))
   data['ingredients'].each do |item|
   item = Item.find_or_create_by(name: item['name'])
   RecipeItem.create(recipe_id: recipe.id, item_id: item.id, item_quantity: 1)
