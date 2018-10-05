@@ -14,6 +14,9 @@ class RecipesController < ApplicationController
 
   def create
     @recipe  = Recipe.new(recipe_params)
+    if @recipe.img_url == ""
+      @recipe.update(img_url: "default_recipe_img.png")
+    end
     if @recipe.update(user_id: current_user.id)
       redirect_to @recipe
     else
