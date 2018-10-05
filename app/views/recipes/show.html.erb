@@ -3,7 +3,12 @@
 
 <% if logged_in? %>
     <h2><%= @recipe.name.titlecase %></h2>
-        <h4>Recipe by: &nbsp;<%= current_user.name.titlecase %> </h4>  <%= image_tag(@recipe.img_url) %>
+        <h4>Recipe by: &nbsp;<%= current_user.name.titlecase %> </h4>  
+        <% if @recipe.img_url.nil? %>
+            <%= image_tag('default_recipe_img.png') %>
+        <% else %>
+            <%= image_tag(@recipe.img_url) %>
+        <% end %>
         <h3>Ingredients: </h3>
             <% @recipe.recipe_items.each do |recipe_item| %>
                 <p><%= recipe_item.item.name %></p>
